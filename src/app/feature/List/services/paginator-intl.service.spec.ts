@@ -6,7 +6,9 @@ describe('PaginatorIntlService', () => {
   let service: PaginatorIntlService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers:[PaginatorIntlService]
+    });
     service = TestBed.inject(PaginatorIntlService);
   });
 

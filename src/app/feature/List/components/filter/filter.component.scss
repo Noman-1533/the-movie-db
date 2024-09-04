@@ -141,26 +141,104 @@
 //     }
 // }
 
+// .container {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 2vw;
+
+//     // @media (min-width: 768px) and (max-width: 810px) {
+//     //     margin-left: 20px;
+//     //     margin-top: 20px;
+//     //     width: calc(100% - 40px);
+//     // }
+
+//     .sort-functionality, .filter-functionality, .search-option {
+//         margin-top: 1vh;
+//         margin-left: 1vw;
+//         margin-right: 1vw;
+
+//         // @media (min-width: 768px) and (max-width: 810px) {
+//         //     margin-left: 20px;
+//         //     margin-right: 20px;
+//         // }
+
+//         .input {
+//             margin-top: 1vh;
+//         }
+
+//         mat-panel-title {
+//             font-size: large;
+//         }
+//     }
+   
+//     .genre-button {
+//         border: 1px solid grey;
+//         margin: 5px;
+//         padding: 15px;
+//         border-radius: 30px;
+
+//         &:hover {
+//             background-color: rgb(40, 181, 225);
+//             color: white;
+//         }
+//     }
+
+//     .search-button {
+//         border: 1px solid grey;
+//         padding: 15px;
+//         width: 100%;
+//         border-radius: 30px;
+//         background-color: rgb(40, 181, 225);
+//         color: white;
+
+//         &:hover {
+//             background: rgb(6, 37, 64);
+//         }
+
+//         // @media (min-width: 768px) and (max-width: 810px) {
+//         //     margin-left: 20px;
+//         //     margin-right: 20px;
+//         // }
+//     }
+
+//     mat-form-field {
+//         height: 4rem;
+//         width: 12rem;
+
+//         // @media (min-width: 768px) and (max-width: 810px) {
+//         //     width: calc(100% - 40px);
+//         // }
+//     }
+
+//     mat-slider {
+//         width: 90%;
+//     }
+
+//     .release-date {
+//         display: flex;
+//         flex-direction: column;
+//         mat-form-field{
+//             margin-right: 10px;
+//         }
+//         @media (min-width: 769px) {
+//             flex-direction: row !important;
+//             gap: 100px !important;
+//         }
+//     }
+// }
+
+
 .container {
     display: flex;
     flex-direction: column;
     gap: 2vw;
 
-    // @media (min-width: 768px) and (max-width: 810px) {
-    //     margin-left: 20px;
-    //     margin-top: 20px;
-    //     width: calc(100% - 40px);
-    // }
-
-    .sort-functionality, .filter-functionality, .search-option {
+    .sort-functionality,
+    .filter-functionality,
+    .search-option {
         margin-top: 1vh;
         margin-left: 1vw;
         margin-right: 1vw;
-
-        // @media (min-width: 768px) and (max-width: 810px) {
-        //     margin-left: 20px;
-        //     margin-right: 20px;
-        // }
 
         .input {
             margin-top: 1vh;
@@ -170,7 +248,7 @@
             font-size: large;
         }
     }
-   
+
     .genre-button {
         border: 1px solid grey;
         margin: 5px;
@@ -194,20 +272,11 @@
         &:hover {
             background: rgb(6, 37, 64);
         }
-
-        // @media (min-width: 768px) and (max-width: 810px) {
-        //     margin-left: 20px;
-        //     margin-right: 20px;
-        // }
     }
 
     mat-form-field {
         height: 4rem;
         width: 12rem;
-
-        // @media (min-width: 768px) and (max-width: 810px) {
-        //     width: calc(100% - 40px);
-        // }
     }
 
     mat-slider {
@@ -217,12 +286,40 @@
     .release-date {
         display: flex;
         flex-direction: column;
-        mat-form-field{
+
+        mat-form-field {
             margin-right: 10px;
         }
-        @media (min-width: 769px) {
-            flex-direction: row !important;
-            gap: 100px !important;
-        }
+    }
+}
+
+// @media (min-width: 768px) and (max-width: 810px) {
+//     .container {
+//         margin-left: 20px;
+//         margin-top: 20px;
+//         width: calc(100% - 40px);
+//     }
+
+//     .container .sort-functionality,
+//     .container .filter-functionality,
+//     .container .search-option {
+//         margin-left: 20px;
+//         margin-right: 20px;
+//     }
+
+//     .container .search-button {
+//         margin-left: 20px;
+//         margin-right: 20px;
+//     }
+
+//     .container mat-form-field {
+//         width: calc(100% - 40px);
+//     }
+// }
+
+@media (min-width: 769px) {
+    .container .release-date {
+        flex-direction: row !important;
+        gap: 100px !important;
     }
 }

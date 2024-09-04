@@ -71,6 +71,11 @@
 @media (max-width: 768px) {
   .container .main-content .card-container {
       margin-left: 20px;
+     
+  }
+   .main-content{
+    width: 100%;
+    justify-content: space-around;
   }
   .container mat-paginator {
       width: 90%; 
@@ -80,6 +85,7 @@
 @media (min-width: 1024px) {
   .container .main-content .card-container {
       width: calc(33.33% - 0.67%);
+      
   }
 }
 
