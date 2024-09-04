@@ -1,0 +1,30 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  gap: 2rem;
+  // position: absolute;
+  // display: flexbox;
+  // .container-header {
+  //   display: flex;
+  //   flex-direction: column;
+  //   // justify-content: space-between;
+  //   // align-items: center; /* Aligns heading and button vertically */
+  //   margin-bottom: 1.5rem; /* Adds space between header and content */
+  // }
+  // .container-button{
+  //   position: relative;
+  //   display: flex;
+  //   transform: translate(10%,-50%);
+  // }
+
+  .container-content {
+    display: block;
+  }
+}
+
+.container-header{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}

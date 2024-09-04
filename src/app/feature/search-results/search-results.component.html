@@ -1,0 +1,16 @@
+<div *ngIf="searchResult.length!==0" class="search-result">
+    <span *ngFor="let item of searchResult">
+      <app-card
+      [name]="item.cardTitle"
+      [image]="item.cardImage"
+      [type]="'movie'"
+      [subtitle]="item.cardSubtitle"
+      [id]="item.id"
+      >
+    <app-ratting
+    [ratting]="item.cardRatting.toString()"
+    >
+    </app-ratting>
+    </app-card>
+    </span>
+  </div>

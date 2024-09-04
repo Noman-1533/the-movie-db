@@ -1,0 +1,148 @@
+.container {
+    display: flex;
+    background-color: rgba(0, 0, 0, .5) !important;
+    width: 100vw;
+    // height: 60vh;
+    min-height: 60vh;
+    // max-height: 100%;
+    .image-container {
+        margin-top: 5vh;
+    }
+    .image-container {
+        margin-left: 15vw;
+        display: flex;
+        img {
+            height: 50vh;
+            width: 15vw;
+            border-radius: 10px;
+        }
+    }
+
+    .movie-data-for-user,
+    .movie-data-from-user,
+    .movie-release-genres,
+    .movie-title {
+        margin-bottom: 5px;
+    }
+    .movie-title {
+        font-size: xx-large;
+    }
+
+    .certificate-button {
+        color: rgb(211, 206, 206);
+        background: transparent;
+        border: 1px solid rgb(182, 177, 177);
+        padding: 2px;
+
+    }
+
+    .genre-button {
+        padding: 0px;
+        margin-left: 5px;
+        margin-right: 0px;
+    }
+
+    .dot {
+        background-color: rgb(243, 235, 235);
+        display: inline-flex;
+        position: relative;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        margin-left: 5px;
+        margin-right: 2px;
+    }
+
+    .ratting {
+        display: flex;
+        gap: 5%;
+
+        .ratting-text {
+            width: 2vw;
+            height: 2vh;
+            font-size: larger;
+            // margin-left: 10px;
+            line-height: 1.2;
+        }
+
+        .ratting-emoji {
+            color: rgba(255, 242, 0, 0.887);
+            font-size: x-large;
+            display: flex;
+            gap: 5px;
+        }
+
+        .vibe-text {
+            font-size: 15px;
+            padding: 10px;
+            height: 2vh;
+            min-width:fit-content ;
+            // width: 180px;
+            // max-width: 100vw;
+            border-radius: 30px;
+            background: rgb(6, 37, 64);
+
+            span {
+                text-decoration: underline rgb(23, 109, 145) 3px;
+                // text-decoration-color:
+            }
+        }
+    }
+
+    .btn-fab {
+        background-color: rgb(6, 37, 64);
+        font-size: small;
+        padding: 0px;
+        height: 8vh;
+        border-radius: 50%;
+        border: none;
+        margin-right: 5px;
+
+    }
+
+    .details-tagline {
+        padding-top: 1vh;
+        font-size: large;
+        color: rgb(213, 211, 211);
+    }
+
+    .overview-header {
+        font-size: x-large;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .creator{
+
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        // gap: 25%;
+        .test{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
+
+mat-card,
+.genre-button,
+.text-color,
+.ratting-text,
+.vibe-text,
+.btn-fab,
+.btn-trailer,
+.overview-header,
+.overview-content {
+    color: white;
+}
+
+mat-card {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    width: 100vw;
+    max-height: 100%;
+}

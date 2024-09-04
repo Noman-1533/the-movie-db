@@ -1,0 +1,117 @@
+
+// .container {
+//     margin-top: 2vh;
+//     width: 100vw;
+//     // height: 20vh;
+//     background: rgb(3, 34, 60);
+//     color: white;
+//     display: flex;
+//     gap: 30px;
+//     // padding: 5vw;
+
+//     .footer-logo {
+//         margin-left: 20vw;
+//         width: 12vw;
+
+//         .text {
+//             margin-top: 1rem;
+//             font-size: larger;
+//         }
+//     }
+
+    
+// }
+
+
+.container {
+    margin-top: 2vh;
+    width: 100%;
+    background: rgb(3, 34, 60);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding-left: 2vw;
+    padding-top: 2vw;
+    .footer-logo {
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        img {
+            width: 50%;
+            height: auto;
+        }
+
+        .text {
+            margin-top: 1rem;
+            font-size: larger;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+    }
+
+    .the-basic, .get-involved, .community, .legal {
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid white;
+            padding-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h4 {
+                margin: 0;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: #1DA1F2;
+                }
+            }
+        }
+    }
+
+    // Responsive styles
+    @media (max-width: 1024px) {
+        .footer-logo {
+            grid-column: span 1;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+        .footer-logo {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .the-basic, .get-involved, .community, .legal {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .content h4 {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+
+        .footer-logo {
+            grid-column: span 1;
+        }
+    }
+}

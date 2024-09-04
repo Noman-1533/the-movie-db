@@ -1,0 +1,13 @@
+<app-description
+*ngIf="!(detailsLoading$|async)"
+[data]="detailsData"
+[error]="detailsError$"
+[loading]="detailsLoading$"
+[type]="detailsType"
+></app-description>
+<app-recommendation
+*ngIf="!(recommendationLoading$|async)"
+[data]="recommendationData$"
+[loading]="recommendationLoading$"
+[error]="recommendationError$"
+></app-recommendation>

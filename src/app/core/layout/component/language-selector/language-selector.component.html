@@ -1,0 +1,38 @@
+<button
+  class="languageButton"
+  #languageSelectorTrigger="matMenuTrigger"
+  [matMenuTriggerFor]="languageSelectorTriggerKey"
+  
+>
+  EN
+</button>
+<mat-menu
+  #languageSelectorTriggerKey="matMenu"
+  [hasBackdrop]="false"
+  [overlapTrigger]="false"
+  
+>
+<div class="language-selection-field">
+  <div class="selector-header">
+    <h3 (click)="languageSelector($event)">Language preference</h3>
+  <button>X</button>
+</div>
+<div class="selector-body">
+<mat-label (click)="languageSelector($event)">Default Language</mat-label>
+  <mat-form-field (click)="languageSelector($event)">
+    <mat-label>Language</mat-label>
+    <mat-select >
+      <mat-option *ngFor="let language of languages" [value]="language.value">{{ language.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-label (click)="languageSelector($event)">Fallback Language</mat-label>
+  <mat-form-field (click)="languageSelector($event)">
+    <mat-label>Language</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let language of languages" [value]="language.value">{{ language.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+  <br>
+</div>
+</mat-menu>

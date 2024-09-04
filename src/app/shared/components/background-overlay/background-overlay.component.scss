@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 10px;
+  }
+  
+  .image-wrapper {
+    position: relative;
+  }
+  
+  .image {
+    display: block;
+    width: 100vw;
+    height: 60vh;
+    max-height: fit-content;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s;
+    opacity: .8; /* Adjust this as needed */
+  }
+  .details-content{
+    // display: flex;
+    position: absolute;
+  }
+  

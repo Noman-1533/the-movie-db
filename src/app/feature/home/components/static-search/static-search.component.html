@@ -1,0 +1,16 @@
+<div class="search-container" [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}">
+    <div class="content">
+      <div class="welcome-message">
+        <h1>Welcome.</h1>
+        Millions of movies, TV shows and people to discover. Explore now.
+      </div>
+      <div class="search-bar">
+        <input matInput placeholder="Search for movies, TV shows, people..." [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange()">
+        <button mat-flat-button (click)="onSearch()">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+
+ 

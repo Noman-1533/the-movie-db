@@ -1,0 +1,11 @@
+
+<div *ngIf="loading$ | async">
+    <app-ratting [mode]="'indeterminate'" [ratting]="''"></app-ratting>
+  </div>
+  <div class="content" *ngIf="!(loading$ | async)">
+    <div  *ngFor="let singleCard of containerContent$|async">
+      <app-card  [name]="singleCard.cardTitle" [subtitle]="singleCard.cardSubtitle" [image]="singleCard.cardImage" [id]="singleCard.id" [type]="singleCard.cardType">
+        <app-ratting [ratting]="singleCard.cardRatting.toString()"></app-ratting>
+      </app-card>
+    </div>
+  </div>

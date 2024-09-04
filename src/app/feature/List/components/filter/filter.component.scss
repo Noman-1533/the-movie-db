@@ -1,0 +1,228 @@
+// .container{
+//     display: flex;
+//     flex-direction: column;
+//     .sort-functionality, .filter-functionality,.search-option{
+//         margin-top: 1vh;
+//         margin-left: 1vw;
+//         margin-right: 1vw;
+//         .input{
+//             margin-top: 1vh;
+//         }
+//         mat-panel-title{
+//             font-size: large;
+//         }
+//     }
+//     .sort-functionality{
+//         // width: 10px;
+//         // display: flex;
+        
+        
+//         mat-form-field{
+//             width:300px ;
+//         }
+//     }
+//     .genre-button{
+//         border: 1px solid grey ;
+//         margin: 5px;
+//         padding: 15px;
+//         border-radius: 30px;
+//         &:hover{
+//             background-color: rgb(40, 181, 225);
+//             color: white;
+//         }
+//     }
+//     .search-button{
+//         border: 1px solid grey;
+//         padding: 15px;
+//         width: 100%;
+//         border-radius: 30px;
+//         background-color: rgb(40, 181, 225);
+//         color: white;
+//         &:hover{
+//             background:rgb(6, 37, 64);
+//         }
+//     }
+//     mat-form-field{
+//         height:4rem;
+//         width: 12rem;
+//         // text-decoration: none;
+//         // border: none;
+//     }
+//     mat-slider{
+//         width: 90%;
+//     }
+//     matInput{
+//         border: 1px solid black;
+//     }
+    
+// }
+
+
+// .container {
+//     display: flex;
+//     flex-direction: column;
+//     .sort-functionality,
+//     .filter-functionality,
+//     .search-option {
+//         margin-top: 1vh;
+//         margin-left: 1vw;
+//         margin-right: 1vw;
+
+//         .input {
+//             margin-top: 1vh;
+//         }
+
+//         mat-panel-title {
+//             font-size: large;
+//         }
+//     }
+
+//     .sort-functionality {
+//         mat-form-field {
+//             width: 100%;
+
+//             @media (min-width: 768px) {
+//                 width: 300px;
+//             }
+//         }
+//     }
+
+//     .genre-button {
+//         border: 1px solid grey;
+//         margin: 5px;
+//         padding: 15px;
+//         border-radius: 30px;
+//         width: 100%;
+//         text-align: center;
+
+//         &:hover {
+//             background-color: rgb(40, 181, 225);
+//             color: white;
+//         }
+
+//         @media (min-width: 768px) {
+//             width: auto;
+//         }
+//     }
+
+//     .search-button {
+//         border: 1px solid grey;
+//         padding: 15px;
+//         width: 100%;
+//         border-radius: 30px;
+//         background-color: rgb(40, 181, 225);
+//         color: white;
+//         text-align: center;
+
+//         &:hover {
+//             background: rgb(6, 37, 64);
+//         }
+
+//         @media (min-width: 768px) {
+//             width: auto;
+//         }
+//     }
+
+//     mat-form-field {
+//         height: 4rem;
+//         width: 100%;
+
+//         @media (min-width: 768px) {
+//             width: 12rem;
+//         }
+//     }
+
+//     mat-slider {
+//         width: 100%;
+
+//         @media (min-width: 768px) {
+//             width: 90%;
+//         }
+//     }
+// }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+
+    // @media (min-width: 768px) and (max-width: 810px) {
+    //     margin-left: 20px;
+    //     margin-top: 20px;
+    //     width: calc(100% - 40px);
+    // }
+
+    .sort-functionality, .filter-functionality, .search-option {
+        margin-top: 1vh;
+        margin-left: 1vw;
+        margin-right: 1vw;
+
+        // @media (min-width: 768px) and (max-width: 810px) {
+        //     margin-left: 20px;
+        //     margin-right: 20px;
+        // }
+
+        .input {
+            margin-top: 1vh;
+        }
+
+        mat-panel-title {
+            font-size: large;
+        }
+    }
+   
+    .genre-button {
+        border: 1px solid grey;
+        margin: 5px;
+        padding: 15px;
+        border-radius: 30px;
+
+        &:hover {
+            background-color: rgb(40, 181, 225);
+            color: white;
+        }
+    }
+
+    .search-button {
+        border: 1px solid grey;
+        padding: 15px;
+        width: 100%;
+        border-radius: 30px;
+        background-color: rgb(40, 181, 225);
+        color: white;
+
+        &:hover {
+            background: rgb(6, 37, 64);
+        }
+
+        // @media (min-width: 768px) and (max-width: 810px) {
+        //     margin-left: 20px;
+        //     margin-right: 20px;
+        // }
+    }
+
+    mat-form-field {
+        height: 4rem;
+        width: 12rem;
+
+        // @media (min-width: 768px) and (max-width: 810px) {
+        //     width: calc(100% - 40px);
+        // }
+    }
+
+    mat-slider {
+        width: 90%;
+    }
+
+    .release-date {
+        display: flex;
+        flex-direction: column;
+        mat-form-field{
+            margin-right: 10px;
+        }
+        @media (min-width: 769px) {
+            flex-direction: row !important;
+            gap: 100px !important;
+        }
+    }
+}

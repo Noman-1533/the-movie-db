@@ -1,0 +1,36 @@
+// :host{
+//   margin: 10%;
+// }
+button{
+    cursor: pointer;
+      margin: 3px;
+      background: transparent;
+      color: white;
+}
+.languageButton {
+    border-color: white;
+    box-shadow: none;
+    height: 1.75rem;
+    width: 2rem;
+    &:hover {
+      background: white !important;
+      color: black !important;
+    }
+  }
+  .selector-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0% 2%;
+    button{
+      color: red;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  .selector-body{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    margin: 10%;
+  }

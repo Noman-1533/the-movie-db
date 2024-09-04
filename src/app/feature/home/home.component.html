@@ -1,0 +1,32 @@
+ 
+ <app-static-search></app-static-search>
+
+
+
+<app-home-page-container
+[type]="'trending'"
+  [heading]="'Trending'"
+  [defaultButton]="'Today'"
+  [secondaryButton]="'This Week'"
+  [loading$]="trendingLoading$"
+  [content]="trendingData$"
+>
+</app-home-page-container>
+<app-home-page-container
+[type]="'trailer'"
+  [heading]="'Trailer'"
+  [defaultButton]="'Popular'"
+  [secondaryButton]="'In Theaters'"
+  [loading$]="trailerLoading$"
+  [content]="trendingData$"
+>
+</app-home-page-container>
+<app-home-page-container
+[type]="'popular'"
+  [heading]="'What\'s Popular'"
+  [defaultButton]="'Movie'"
+  [secondaryButton]="'TV Series'"
+  [loading$]="popularLoading$"
+  [content]="popularData$"
+>
+</app-home-page-container>

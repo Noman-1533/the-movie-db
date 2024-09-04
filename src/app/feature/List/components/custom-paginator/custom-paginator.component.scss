@@ -1,0 +1,25 @@
+.paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .paginator-button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .paginator-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .paginator-info {
+    font-size: 1rem;
+  }
+  

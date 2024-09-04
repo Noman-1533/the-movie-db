@@ -1,0 +1,74 @@
+
+<app-image-overlay *ngIf="detailsData" [src]="detailsData.background_image">
+  <mat-card>
+    <div class="container">
+      <div class="image-container">
+        <img [src]="detailsData.poster_image" alt="" />
+      </div>
+      <div class="content-container">
+        <mat-card-header>
+          <mat-card-title class="movie-title">{{
+            detailsData.title
+          }}</mat-card-title>
+          <mat-card-subtitle class="text-color movie-release-genres">
+            <span class="certificate-button">PG-13</span>
+            {{ detailsData.release_date }}(US) <span class="dot"></span>
+            <span *ngFor="let genre of detailsData.genres; index as i">
+              <button class="genre-button" mat-button>
+                {{ genre.name.trim() }}{{ isCommaBeThere(i) }}
+              </button></span
+            ><span class="dot"></span>
+            {{ detailsData.runtime }}</mat-card-subtitle
+          >
+          <mat-card-subtitle class="ratting movie-data-from-user">
+            <div>
+              <app-ratting
+                [ratting]="detailsData.ratting.toString()"
+                [spinnerDiameter]="55"
+                [stroke]="5.5"
+              ></app-ratting>
+            </div>
+            <span class="ratting-text">User Score</span>
+            <span class="ratting-emoji"
+              ><fa-icon [icon]="emoji.grinHeart"></fa-icon>
+              <fa-icon [icon]="emoji.faceSmile"></fa-icon>
+              <fa-icon [icon]="emoji.faceGrinBeamSweat"></fa-icon>
+            </span>
+            <span class="vibe-text">What's your <span>Vibe?</span></span>
+          </mat-card-subtitle>
+          <mat-card-subtitle class="movie-data-for-user"
+            >
+            <button mat-button class="btn-fab">
+              <fa-icon [icon]="emoji.list"></fa-icon>
+            </button>
+            <button mat-button class="btn-fab">
+              <fa-icon [icon]="emoji.heart"></fa-icon>
+            </button>
+            <button mat-button class="btn-fab">
+              <fa-icon [icon]="emoji.bookMark"></fa-icon>
+            </button>
+            <button mat-button class="btn-trailer">
+              <fa-icon [icon]="emoji.play"> </fa-icon> Play Trailer
+            </button>
+        </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+        <mat-card-subtitle class="details-tagline">{{detailsData.tagline}}</mat-card-subtitle>
+        <mat-card-subtitle ><span class="overview-header">Overview</span>
+          <span class="overview-content">{{detailsData.overview}}</span>
+        </mat-card-subtitle>
+        </mat-card-content>
+        <mat-card-footer>
+          <span class="creator">
+          <span  *ngFor="let creator of creators">
+            <div class="test">
+              <div class="creator-name">{{creator.name}}</div>
+              <div class="creator-role">{{creator.role}}</div>
+            </div>
+          </span>
+        </span>
+        </mat-card-footer>
+      </div>
+    </div>
+  </mat-card>
+</app-image-overlay>

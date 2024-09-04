@@ -1,0 +1,427 @@
+.container {
+  // Existing styles
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 4vh;
+  gap: 2%;
+  .side-nav {
+      width: 100%;
+      min-width: 250px;
+  }
+
+  .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 2%;
+
+      .card-container {
+          width: 100%;
+          justify-content: space-around;
+      }
+
+      .load-more-button {
+        width: 100%;
+          // Keep the styles here or add more if needed
+      }
+
+      .loader {
+          width: 100%;
+          padding-top: 30px;
+          margin-left: 0;
+          text-align: center;
+      }
+  }
+
+  mat-paginator {
+      background-color: rgb(1, 180, 228);
+      border-radius: 4px;
+      height: 60px;
+      margin: 10px 0;
+      color: white;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      flex-direction: row;
+      width: 90%;
+      margin-left: 5%;
+      gap: 1%;
+  }
+  .container .side-nav {
+      width: 20%;
+  }
+  .container .main-content {
+    // gap: 0;
+      width: 100%;
+      justify-content: space-around;
+  }
+  .container .main-content .card-container {
+      width: calc(33.33% - 0.67%);
+  }
+  .container .main-content .loader {
+      width: 100%;
+      margin-left: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container .main-content .card-container {
+      margin-left: 20px;
+  }
+  .container mat-paginator {
+      width: 90%; 
+  }
+}
+
+@media (min-width: 1024px) {
+  .container .main-content .card-container {
+      width: calc(33.33% - 0.67%);
+  }
+}
+
+
+// .container{
+//     display: flex;
+//     // height: 91%;
+//     width: 80%;
+//     margin-left: 10%;
+//     margin-top: 4%;
+//     // background: #000;
+//     gap: 2%;
+//     .side-nav{
+//         // display: flex;
+//         width: 20%;
+//         // background: #d1caca;
+//     }
+//     .main-content{
+//         display: flex;
+//         flex-wrap: wrap;
+//         width: 60%;
+//         // background: #bc1d1d;
+//         gap: 1%;
+//         .load-more-button{
+//             background-color:rgb(1, 180, 228);
+//             color: white;
+//             margin-top: %;
+//             width: 60%;
+//             height: 3rem;
+//             border-radius: 5px;
+//             font-size: x-large;
+//             font-weight: bold;
+//             margin-bottom: 1%;
+//             border: none;
+//             cursor: pointer;
+
+//         }
+//         .loader{
+//             width: 60%;
+//             padding-top:30px ;
+//             margin-left: 50%;
+//             display: block;
+//         }
+//     }
+
+// }
+
+// .container {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     margin-left: 0;
+//     margin-top: 4%;
+//     gap: 2%;
+//     margin-left: 0;
+
+//     @media (min-width: 768px) {
+//         flex-direction: row;
+//         width: 80%;
+//         margin-left: 10%;
+//         gap: 1%;
+//     }
+
+//     .side-nav {
+//         width: 100%;
+//         min-width: 225px;
+//         @media (min-width: 768px) {
+//             width: 20%;
+
+//         }
+//     }
+
+//     .main-content {
+//         display: flex;
+//         flex-wrap: wrap;
+//         width: 100%;
+//         gap: 1%;
+
+
+//         @media (min-width: 768px) {
+//         //    padding-left: 20%;
+//             width: 100%;
+//         }
+
+//         .load-more-button {
+//             background-color: rgb(1, 180, 228);
+//             color: white;
+//             margin-top: 1%;
+//             width: 100%;
+//             height: 3rem;
+//             border-radius: 5px;
+//             font-size: x-large;
+//             font-weight: bold;
+//             margin-bottom: 1%;
+//             border: none;
+//             cursor: pointer;
+
+//             @media (min-width: 768px) {
+//                 width: 60%;
+//             }
+//         }
+
+//         .loader {
+//             width: 100%;
+//             padding-top: 30px;
+//             margin-left: 0;
+//             text-align: center;
+
+//             @media (min-width: 768px) {
+//                 width: 60%;
+//                 margin-left: 50%;
+//             }
+//         }
+
+//         .card-container {
+//             width: 100%;
+//             margin-bottom: 2%;
+
+//             @media (min-width: 768px) {
+//                 width: calc(50% - 0.5%);
+//                 margin-left: 10%;
+//             }
+
+//             @media (min-width: 1024px) {
+//                 width: calc(33.33% - 0.67%);
+//             }
+//         }
+//     }
+// }
+
+
+// .container {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     margin-left: 0;
+//     margin-top: 4%;
+//     gap: 2%;
+
+//     @media (min-width: 768px) {
+//         flex-direction: row;
+//         width: 80%;
+//         margin-left: 10%;
+//         gap: 1%;
+//     }
+
+//     @media (min-width: 768px) and (max-width: 810px) {
+//         margin-left: 20px;
+//         gap: 30px;
+//     }
+
+//     .side-nav {
+//         width: 100%;
+//         min-width: 225px;
+
+//         @media (min-width: 768px) {
+//             width: 20%;
+//         }
+
+//         @media (min-width: 768px) and (max-width: 810px) {
+//             margin-left: 20px;
+//             margin-top: 20px;
+//         }
+//     }
+
+//     .main-content {
+//         display: flex;
+//         flex-wrap: wrap;
+//         width: 100%;
+//         gap: 1%;
+
+//         @media (min-width: 768px) {
+//             width: 100%;
+//         }
+
+//         .card-container {
+//             width: 100%;
+//             margin-bottom: 2%;
+//             justify-content: space-around;
+
+
+//             @media (max-width: 768px) {
+//                 margin-left: 20px; // Add left margin for screens 768px or less
+//             }
+
+//             @media (min-width: 768px) and (max-width: 810px) {
+//                 margin-left: 20px;
+//                 gap: 30px;
+//             }
+
+//             @media (min-width: 1024px) {
+//                 width: calc(33.33% - 0.67%);
+//             }
+//         }
+
+//         .load-more-button {
+//             background-color: rgb(1, 180, 228);
+//             color: white;
+//             margin-top: 1%;
+//             width: 100%;
+//             height: 3rem;
+//             border-radius: 5px;
+//             font-size: x-large;
+//             font-weight: bold;
+//             margin-bottom: 1%;
+//             border: none;
+//             cursor: pointer;
+
+//             @media (min-width: 768px) {
+//                 width: 60%;
+//             }
+//         }
+
+//         .loader {
+//             width: 100%;
+//             padding-top: 30px;
+//             margin-left: 0;
+//             text-align: center;
+
+//             @media (min-width: 768px) and (max-width: 810px) {
+//                 margin-left: 20px;
+//             }
+
+//             @media (min-width: 768px) {
+//                 width: 60%;
+//                 margin-left: 50%;
+//             }
+//         }
+//     }
+
+  
+// }
+
+
+
+// .container {
+//     // Existing styles
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     margin-left: 0;
+//     margin-top: 4%;
+//     gap: 2%;
+  
+//     @media (min-width: 768px) {
+//       flex-direction: row;
+//       width: 80%;
+//       margin-left: 10%;
+//       gap: 1%;
+//     }
+  
+//     // @media (min-width: 768px) and (max-width: 810px) {
+//     //   margin-left: 20px;
+//     //   gap: 30px;
+//     // }
+  
+//     .side-nav {
+//       width: 100%;
+//       min-width: 250px;
+  
+//       @media (min-width: 768px) {
+//         width: 20%;
+//       }
+  
+    
+//     }
+  
+//     .main-content {
+//       display: flex;
+//       flex-wrap: wrap;
+//       width: 100%;
+//       gap: 1%;
+  
+//       @media (min-width: 768px) {
+//         width: 100%;
+//       }
+  
+//       .card-container {
+//         width: 100%;
+//         // margin-bottom: 10px;
+//         justify-content: space-around;
+  
+//         @media (max-width: 768px) {
+//           margin-left: 20px;
+//         }
+  
+       
+  
+//         @media (min-width: 1024px) {
+//           width: calc(33.33% - 0.67%);
+//         }
+//       }
+  
+//       .load-more-button {
+//         // background-color: rgb(1, 180, 228);
+//         // color: white;
+//         // margin-top: 1%;
+//         // width: 100%;
+//         // height: 3rem;
+//         // border-radius: 5px;
+//         // font-size: x-large;
+//         // font-weight: bold;
+//         // margin-bottom: 1%;
+//         // border: none;
+//         // cursor: pointer;
+  
+//         @media (min-width: 768px) {
+//           width: 100%;
+//         }
+  
+       
+//       }
+  
+//       .loader {
+//         width: 100%;
+//         padding-top: 30px;
+//         margin-left: 0;
+//         text-align: center;
+  
+      
+  
+//         @media (min-width: 768px) {
+//           width: 100%;
+//           margin-left: 50%;
+//         }
+//       }
+//     }
+//      mat-paginator   {
+//         background-color:  rgb(1, 180, 228); 
+//         border-radius: 4px;
+//         height: 60px; 
+//         margin: 10px 0; 
+//         color: white;
+        
+       
+    
+//         @media (max-width: 768px) {
+//           // margin-left: 2%;
+//           width: 90%; 
+//         }
+//       }
+// }
+  
+
+

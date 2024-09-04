@@ -1,0 +1,22 @@
+
+<div class="buttons">
+    <button
+      mat-button
+      (click)="toggleContainerButton()"
+      [ngClass]="isDefaultSelected ? 'textColor' : ''"
+    >
+      {{ containerDefaultButton }}
+    </button>
+    <button
+    *ngIf="containerSecondaryButton.length>0"
+      mat-button
+      (click)="toggleContainerButton()"
+      [ngClass]="!isDefaultSelected ? 'textColor' : ''"
+    >
+      {{ containerSecondaryButton }}
+    </button>
+    <div
+      class="selected"
+      [ngClass]="isDefaultSelected ? 'p-left' : 'p-right'"
+    ></div>
+  </div>

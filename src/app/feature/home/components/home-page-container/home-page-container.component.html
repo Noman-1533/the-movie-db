@@ -1,0 +1,14 @@
+<app-container [heading]="containerHeading">
+    <app-switchable-button
+      [pageName]="'home'"
+      [defaultButton]="containerDefaultButton"
+      [secondaryButton]="containerSecondaryButton"
+      [type]="containerType"
+      buttons
+    ></app-switchable-button>
+  <app-multi-card
+    [content]="containerContent$"
+    [loading$]="loading$"
+    containerContent
+  ></app-multi-card>
+</app-container>

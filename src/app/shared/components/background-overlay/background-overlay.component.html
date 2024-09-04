@@ -1,0 +1,10 @@
+<div class="image-container">
+    <div class="image-wrapper" *ngFor="let image of images">
+      <img [src]="image.src" [alt]="image.alt" class="image">
+      <div class="overlay" [ngStyle]="{'background-color': image.overlayColor}"></div>
+    </div>
+    <div class="details-content">
+    <ng-content></ng-content>
+  </div>
+  </div>
+  

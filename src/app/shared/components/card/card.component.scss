@@ -1,0 +1,244 @@
+// .card{
+//     // width: 150px;
+//     // height: 500px;
+  
+//     box-shadow: none;
+//     align-items: left;
+//     // display: inline-block;
+//     img{
+//       width: 150px;
+//       height: 225px;
+//       // border-radius: 10px;
+//       // object-fit:fill;
+  
+//     }
+//     .content {
+//         width: 50%;
+//         // height: 5vh;
+//         margin-bottom: -20px;
+//         // padding: 10px;
+//         // Ensure the content overflows into the image area
+//         position: relative;
+//         // top: -50%;
+//         transform: translate(10%,-50%);
+//         // transform: translateX(-40%);
+//       }
+//       .card-footer{
+//         margin-left: .7rem;
+  
+  
+//       }
+//     .cardAction{
+//        line-height: 1.1;
+//       font-size: medium;
+//       width: 150px;
+//         height: auto;
+//       &:hover{
+//        background-color: transparent;
+//         color: blue;
+//         cursor: pointer;
+//         // display: flex;
+//         // flex-wrap: wrap;
+        
+//       }
+  
+//     }
+  
+//   }
+  
+
+// .card {
+//   width: 100%;
+//   box-shadow: none;
+//   align-items: left;
+
+//   img {
+//       width: 100%;
+//       height: auto;
+
+//       @media (min-width: 768px) {
+//           width: 150px;
+//           height: 225px;
+//       }
+//   }
+
+//   .content {
+//       width: 100%;
+//       margin-bottom: -20px;
+//       position: relative;
+//       transform: translate(0, -50%);
+
+//       @media (min-width: 768px) {
+//           width: 50%;
+//           transform: translate(10%, -50%);
+//       }
+//   }
+
+//   .card-footer {
+//       // margin-left: 0;
+//     width: 100%;
+//       // @media (min-width: 768px)
+//       //  {
+//       //     margin-left: .7rem;
+//       // }
+//   }
+
+//   .cardAction {
+//       line-height: 1.1;
+//       font-size: medium;
+//       width: 100%;
+//       height: auto;
+
+//       @media (min-width: 768px) {
+//           width: 150px;
+//       }
+
+//       &:hover {
+//           background-color: transparent;
+//           color: blue;
+//           cursor: pointer;
+//       }
+//   }
+// }
+
+
+.card {
+  box-shadow: none;
+  align-items: left;
+  display:flex;
+  flex-direction: column;
+  align-items: stretch;
+  img {
+      width: 150px;
+      height: 225px;
+  }
+
+  .content {
+      width: 50%;
+      position: relative;
+      transform: translate(10%, -50%);
+  }
+
+  .card-footer {
+      margin-left: 0.7rem;
+      mat-card-subtitle {
+        white-space: nowrap;
+       
+      }
+  }
+
+  .cardAction {
+      line-height: 1.1;
+      font-size: medium;
+      width: 150px;
+      height: auto;
+
+      &:hover {
+          background-color: transparent;
+          color: blue;
+          cursor: pointer;
+      }
+  }
+ 
+  @media (min-width: 768px) and (max-width: 810px) {
+      margin-left: 20px;
+      margin-right: 20px;
+
+      img {
+          width: 140px;
+          height: 210px;
+      }
+
+      .content {
+          width: 45%;
+          transform: translate(10%, -50%);
+      }
+
+      .card-footer {
+          margin-left: 0.5rem;
+          mat-card-subtitle {
+            white-space: nowrap;
+           
+          }
+      }
+  }
+}
+
+
+// .card {
+//   box-shadow: none;
+//   align-items: left;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: stretch;
+//   width: 100%; // Make card full width of its container
+//   height: auto; // Adjust height automatically based on content
+
+//   img {
+//       width: 100%; // Make image fit container width
+//       height: auto; // Maintain aspect ratio
+//   }
+
+//   .content {
+//       width: 100%; // Ensure content fits within card
+//       position: relative;
+//       transform: translate(0, 0); // Adjust transform as needed
+//   }
+
+//   .card-footer {
+//       margin-left: 1rem; // Adjust margin for better spacing
+//       mat-card-subtitle {
+//           white-space: nowrap; // Ensure subtitle is in one line
+//       }
+//   }
+
+//   .cardAction {
+//       line-height: 1.1;
+//       font-size: medium;
+//       width: 100%; // Adjust to fit container
+//       height: auto; // Adjust height based on content
+
+//       &:hover {
+//           background-color: transparent;
+//           color: blue;
+//           cursor: pointer;
+//       }
+//   }
+
+//   @media (min-width: 768px) and (max-width: 810px) {
+//       margin-left: 20px;
+//       margin-right: 20px;
+
+//       img {
+//           width: 100%;
+//           height: auto;
+//       }
+
+//       .content {
+//           width: 100%;
+//           transform: translate(0, 0);
+//       }
+
+//       .card-footer {
+//           margin-left: 0.5rem;
+//       }
+//   }
+//   @media (min-width: 811px) and (max-width: 1024px) {
+//       margin-left: 20px;
+//       margin-right: 20px;
+
+//       img {
+//           width: 50%;
+//           height: auto;
+//       }
+
+//       .content {
+//           width: 50%;
+//           transform: translate(0, 0);
+//       }
+
+//       .card-footer {
+//           margin-left: 0.5rem;
+//       }
+//   }
+// }

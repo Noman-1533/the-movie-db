@@ -1,0 +1,126 @@
+<!-- 
+
+<div class="header-bg">
+  <mat-grid-list cols="6" rowHeight="70px">
+    <mat-grid-tile>
+      <div class="logo-container">
+        <div class="logo">
+          <img
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+            alt="TMDB logo"
+            (click)="onClick()"
+          />
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+      <div class="menu-container">
+        <div class="menu-bar">
+          <ng-container *ngFor="let button of navButtons; let i = index">
+            <span class="nav-button-wrapper"> </span>
+            <button
+              mat-button
+              class="nav-link"
+              #menuTrigger="matMenuTrigger"
+              [matMenuTriggerFor]="triggerKey"
+              >
+             
+              <span class="button-color">{{ button.title }}</span>
+            </button>
+
+            <mat-menu
+              #triggerKey="matMenu"
+              [hasBackdrop]="false"
+              [overlapTrigger]="false"
+              [id]="'menu' + i"
+            >
+              <div
+              >
+             
+                <button mat-menu-item *ngFor="let item of button.menuItems" (click)="onClick(item.navLink)">
+                  {{ item.title }}
+                </button>
+              </div>
+            </mat-menu>
+          </ng-container>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <div class="other-menu-container">
+        <div class="other-menu">
+          <button class="btn"><mat-icon>add</mat-icon></button>
+         
+            <app-language-selector></app-language-selector>
+          <button mat-button>Login</button>
+          <button mat-button>Join TMDB</button>
+          <button class="btn searchButton" ><mat-icon>search</mat-icon></button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> -->
+
+
+
+<div class="header-bg">
+  <mat-grid-list cols="12" rowHeight="70px">
+    <mat-grid-tile colspan="2">
+      <div class="logo-container">
+        <div class="logo">
+          <img
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+            alt="TMDB logo"
+            (click)="onClick()"
+          />
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="7">
+      <div class="menu-container">
+        <div class="menu-bar">
+          <ng-container *ngFor="let button of navButtons; let i = index">
+            <span class="nav-button-wrapper">
+              <button
+                mat-button
+                class="nav-link"
+                #menuTrigger="matMenuTrigger"
+                [matMenuTriggerFor]="triggerKey"
+              >
+                <span class="button-color">{{ button.title }}</span>
+              </button>
+            </span>
+
+            <mat-menu
+              #triggerKey="matMenu"
+              [hasBackdrop]="false"
+              [overlapTrigger]="false"
+              [id]="'menu' + i"
+            >
+              <div>
+                <button
+                  mat-menu-item
+                  *ngFor="let item of button.menuItems"
+                  (click)="onClick(item.navLink)"
+                >
+                  {{ item.title }}
+                </button>
+              </div>
+            </mat-menu>
+          </ng-container>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+      <div class="other-menu-container">
+        <div class="other-menu">
+          <button class="btn"><mat-icon>add</mat-icon></button>
+          <app-language-selector></app-language-selector>
+          <button mat-button>Login</button>
+          <button mat-button>Join TMDB</button>
+          <button class="btn searchButton"><mat-icon>search</mat-icon></button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

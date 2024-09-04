@@ -1,0 +1,29 @@
+.progress-container {
+  position: relative;
+  display: inline-block;
+  // width: 40px;
+  // height: 40px;
+  border-radius: 50%;
+
+  mat-progress-spinner {
+    width: 100% !important;
+    height: 100% !important;
+    // background-color: rgb(50, 45, 45);
+    // border-radius: 50%;
+
+  }
+  .mat-spinner::ng-deep circle {
+  stroke: #fff;
+}
+
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .75em;
+    font-weight: bold;
+    color: #f4ecec;
+  }
+}
+

@@ -1,0 +1,35 @@
+<!-- <mat-progress-spinner [value]="value"> </mat-progress-spinner> -->
+
+<!-- <div class="progress-container" [ngStyle]="{backgroundColor:backgroundColor}">
+
+  <mat-progress-spinner
+    [value]="value"
+    [color]="color"
+    [mode]="mode"
+    [strokeWidth]="8"
+    >
+
+  </mat-progress-spinner>
+
+
+
+  <div class="progress-text">{{value.length!==0? value:'' }}{{value!=='N/A'&&value.length!==0?'%':''}}</div>
+</div> -->
+
+<div 
+  class="progress-container" 
+  [ngStyle]="{backgroundColor: backgroundColor, width: spinnerDiameter + 'px', height: spinnerDiameter + 'px'}">
+
+  <mat-progress-spinner
+  class="progress-container" 
+    [value]="value"
+    [color]="color"
+    [mode]="mode"
+    [strokeWidth]="spinnerStrokeWidth"
+    [diameter]="spinnerDiameter"  
+  ></mat-progress-spinner>
+
+  <div class="progress-text" [ngStyle]="{ 'font-size': spinnerDiameter * 0.3 + 'px' }">
+    {{ value.length !== 0 ? value : '' }}{{ value !== 'N/A' && value.length !== 0 ? '%' : '' }}
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="side-nav">
+    <app-filter></app-filter>
+  </div>
+  <div class="main-content">
+    <span *ngFor="let singleListView of listViewContent">
+      <div class="card-container">
+        <app-card
+          [name]="singleListView.cardTitle"
+          [image]="singleListView.cardImage"
+          [subtitle]="singleListView.cardSubtitle"
+          [id]="singleListView.id"
+          [type]="singleListView.cardType"
+        >
+          <app-ratting
+            [ratting]="singleListView.cardRatting.toString()"
+          ></app-ratting>
+        </app-card>
+      </div>
+    </span>
+    <div class="loader" *ngIf="loading$ | async">
+      <app-ratting
+        [mode]="'indeterminate'"
+        [ratting]="''"
+        [spinnerDiameter]="70"
+        [stroke]="7"
+      ></app-ratting>
+    </div>
+    <div class="load-more-button">
+      <mat-paginator
+        [length]="10000"
+        [pageSize]="20"
+        [pageIndex]="currentPage"
+        [showFirstLastButtons]="true"
+        (page)="OnClickPaginatorPageChange($event)"
+      ></mat-paginator>
+    </div>
+    <!-- <button class="load-more-button" (click)="OnClickLoadMore()">Load More</button> -->
+  </div>
+</div>
