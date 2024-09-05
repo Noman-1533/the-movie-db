@@ -2,8 +2,8 @@
 <app-image-overlay *ngIf="detailsData" [src]="detailsData.background_image">
   <mat-card>
     <div class="container">
-      <div class="image-container">
-        <img [src]="detailsData.poster_image" alt="" />
+      <div class="image-container"  >
+        <img [src]="detailsData.poster_image" alt=""  appTooltip [tooltipTitle]="detailsData.title" [tooltipContent]="'https://player.vimeo.com/video/1006566924?autoplay=1&amp;muted=1&amp;autopause=0'"/>
       </div>
       <div class="content-container">
         <mat-card-header>

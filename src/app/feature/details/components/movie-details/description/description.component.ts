@@ -1,8 +1,6 @@
-import { async } from '@angular/core/testing';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { DetailsFacadeService } from '../../../services/details.facade.service';
 import { Observable } from 'rxjs';
-import { MovieDetails } from '../../../models/details.model';
 import { MovieDescriptionModel } from '../../../models/movie-tv-details.model';
 import { faFaceGrinBeamSweat, faFaceGrinHearts, faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 import { faList,faHeart,faBookmark,faPlay   } from '@fortawesome/free-solid-svg-icons';

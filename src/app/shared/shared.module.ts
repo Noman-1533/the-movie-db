@@ -8,6 +8,8 @@ import { ContainerComponent } from './components/container/container.component';
 import { SwitchableButtonComponent } from './components/switchable-button/switchable-button.component';
 import { MultiCardComponent } from './components/multi-card/multi-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CustomTooltipComponent } from './components/custom-tooltip/custom-tooltip.component';
+import { TooltipDirective } from './directives/tooltip.directive';
 
 
 @NgModule({
@@ -18,6 +20,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ContainerComponent,
     SwitchableButtonComponent,
     MultiCardComponent,
+    CustomTooltipComponent,
+
+    TooltipDirective,
    
   ],
   imports: [CommonModule, AngularMaterialModule, FontAwesomeModule,
@@ -29,6 +34,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ContainerComponent,
     SwitchableButtonComponent,
     MultiCardComponent,
+    CustomTooltipComponent,
+
+    TooltipDirective,
+    
     AngularMaterialModule, 
     FontAwesomeModule,
 
