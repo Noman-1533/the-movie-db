@@ -94,6 +94,12 @@ export class ListComponent implements OnInit {
         for (let i = 0; i < this.listViewContent.length; i++) {
           this.listViewContent[i].cardType = this.type;
         }
+        {
+          window.scrollTo({
+            top:0,
+            behavior:'smooth'
+          })
+        }
       }
     });
   }

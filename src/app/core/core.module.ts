@@ -9,6 +9,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AuthInterceptor } from './interceptors/auth.inctercptor';
 import { FooterComponent } from './layout/component/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -22,6 +23,7 @@ import { FooterComponent } from './layout/component/footer/footer.component';
   imports: [
     CommonModule,
     CoreRoutingModule,
+    FormsModule,
     SharedModule,
     HttpClientModule,
 

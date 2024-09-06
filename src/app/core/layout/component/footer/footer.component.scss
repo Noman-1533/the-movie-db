@@ -24,6 +24,7 @@
 
 
 .container {
+    display: block;
     margin-top: 2vh;
     width: 100%;
     background: rgb(3, 34, 60);
@@ -31,7 +32,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
-    padding-left: 2vw;
     padding-top: 2vw;
     .footer-logo {
         grid-column: span 1;

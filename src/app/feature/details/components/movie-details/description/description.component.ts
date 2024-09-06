@@ -28,9 +28,26 @@ export class DescriptionComponent implements OnInit{
   }
 
   creators=[
-    {name:'Person1',role:'Director'},
-    {name:'Person2', role:'ScreenPlay'},
-    {name:'Persone3', role:'Story'},
+    {name:'Person',role:'Director'},
+    {name:'Person', role:'ScreenPlay'},
+    {name:'Person', role:'Story'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
+    {name:'Person', role:'Actor'},
 
   ]
   constructor(private facade:DetailsFacadeService){}

@@ -1,148 +1,215 @@
-.container {
-    display: flex;
-    background-color: rgba(0, 0, 0, .5) !important;
-    width: 100vw;
-    // height: 60vh;
-    min-height: 60vh;
-    // max-height: 100%;
-    .image-container {
-        margin-top: 5vh;
+.main-container {
+   position: relative;
+   .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    z-index: 1; 
     }
-    .image-container {
-        margin-left: 15vw;
+    .container {
         display: flex;
-        img {
-            height: 50vh;
-            width: 15vw;
-            border-radius: 10px;
-        }
-    }
-
-    .movie-data-for-user,
-    .movie-data-from-user,
-    .movie-release-genres,
-    .movie-title {
-        margin-bottom: 5px;
-    }
-    .movie-title {
-        font-size: xx-large;
-    }
-
-    .certificate-button {
-        color: rgb(211, 206, 206);
-        background: transparent;
-        border: 1px solid rgb(182, 177, 177);
-        padding: 2px;
-
-    }
-
-    .genre-button {
-        padding: 0px;
-        margin-left: 5px;
-        margin-right: 0px;
-    }
-
-    .dot {
-        background-color: rgb(243, 235, 235);
-        display: inline-flex;
-        position: relative;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        margin-left: 5px;
-        margin-right: 2px;
-    }
-
-    .ratting {
-        display: flex;
-        gap: 5%;
-
-        .ratting-text {
-            width: 2vw;
-            height: 2vh;
-            font-size: larger;
-            // margin-left: 10px;
-            line-height: 1.2;
-        }
-
-        .ratting-emoji {
-            color: rgba(255, 242, 0, 0.887);
-            font-size: x-large;
-            display: flex;
-            gap: 5px;
-        }
-
-        .vibe-text {
-            font-size: 15px;
-            padding: 10px;
-            height: 2vh;
-            min-width:fit-content ;
-            // width: 180px;
-            // max-width: 100vw;
-            border-radius: 30px;
-            background: rgb(6, 37, 64);
-
-            span {
-                text-decoration: underline rgb(23, 109, 145) 3px;
-                // text-decoration-color:
+        background-color: rgba(107, 105, 105, 0.5) !important;
+        width: 100%;
+        z-index: 2; 
+        position: relative; 
+     
+        .image-container {
+            margin-top: 5vh;
+            margin-left: 10%;
+            // margin-left: clamp(10px,10%,12%);
+            width:25%;
+           margin-right: min(1%,30px);
+           margin-bottom: 1%;
+            .thumbnail {
+                width:100%;
+                border-radius: 10px;
             }
         }
-    }
 
-    .btn-fab {
-        background-color: rgb(6, 37, 64);
-        font-size: small;
-        padding: 0px;
-        height: 8vh;
-        border-radius: 50%;
-        border: none;
-        margin-right: 5px;
+        .movie-data-for-user,
+        .movie-data-from-user,
+        .movie-release-genres,
+        .movie-title {
+            margin-bottom: 5px;
+        }
 
-    }
+        .movie-title {
+            font-size: xx-large;
+        }
 
-    .details-tagline {
-        padding-top: 1vh;
-        font-size: large;
-        color: rgb(213, 211, 211);
-    }
+        .certificate-button {
+            color: rgb(211, 206, 206);
+            background: transparent;
+            border: 1px solid rgb(182, 177, 177);
+            padding: 2px;
 
-    .overview-header {
-        font-size: x-large;
-        display: block;
-        margin-bottom: 5px;
-    }
-    .creator{
+        }
 
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        margin-left: 20px;
-        margin-right: 20px;
-        // gap: 25%;
-        .test{
+        .genre-button {
+            padding: 0px;
+            margin-left: 5px;
+            margin-right: 0px;
+        }
+
+        .dot {
+            background-color: rgb(243, 235, 235);
+            display: inline-flex;
+            position: relative;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            margin-left: 5px;
+            margin-right: 2px;
+        }
+
+        .ratting {
             display: flex;
-            flex-direction: column;
+            gap: 5%;
+            // width: 100%;
+            .ratting-text {
+                width: 3%;
+                font-size: larger;
+                // margin-left: 10px;
+                line-height: 1.2;
+            }
+
+            .ratting-emoji {
+                color: rgba(255, 242, 0, 0.887);
+                font-size: x-large;
+                display: flex;
+                gap: max(1%,5px);
+                margin-left: 5%;
+            }
+
+            .vibe-text {
+                font-size: 1em;
+                padding: 5%;
+               
+                border-radius: 30px;
+                background: rgb(6, 37, 64);
+
+                span {
+                    text-decoration: underline rgb(23, 109, 145) 3px;
+                }
+            }
+        }
+
+        .btn-fab {
+            background-color: rgb(6, 37, 64);
+            font-size: small;
+            padding: 0px;
+            height: 8vh;
+            border-radius: 50%;
+            border: none;
+            margin-right: 5px;
+
+        }
+
+        .details-tagline {
+            padding-top: 1vh;
+            font-size: large;
+            color: rgb(213, 211, 211);
+        }
+
+        .overview-header {
+            font-size: x-large;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .creator {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-items: start;
+            // justify-content: space-between;
+            margin-top: 10px;
+            margin-left: 5%;
+            gap: 5%;
+            
+
+            .test {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                margin-bottom: 30%;
+                
+               
+            }
+        }
+
+    }
+
+    mat-card,
+    .genre-button,
+    .text-color,
+    .ratting-text,
+    .vibe-text,
+    .btn-fab,
+    .btn-trailer,
+    .overview-header,
+    .overview-content {
+        color: white;
+    }
+
+    mat-card {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        max-height: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .image-container {
+        width: 100% !important;
+        margin: 0 auto !important; // To center the image-container
+    }
+    .thumbnail {
+        width: 100% !important;
+    }
+    .ratting{
+        display: flex !important;
+        gap: 5% !important;
+    }
+    // .vibe-text{
+    //     min-width: fit-content;
+    // }
+}
+@media (max-width:1100px) and (min-width:600px) {
+    .container{
+        .image-container{
+            width: 35% !important;
+            margin: 1% 1% !important;
+            // margin-left: 1% !important;
         }
     }
-
 }
-
-mat-card,
-.genre-button,
-.text-color,
-.ratting-text,
-.vibe-text,
-.btn-fab,
-.btn-trailer,
-.overview-header,
-.overview-content {
-    color: white;
-}
-
-mat-card {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    width: 100vw;
-    max-height: 100%;
-}
+// .container {
+//     display: flex;
+//     background-color: rgba(107, 105, 105, 0.5) !important;
+//     width: 100%;
+//     z-index: 2; 
+//     position: relative; 
+ 
+//     .image-container {
+//         margin-top: 5vh;
+//         margin-left: 10%;
+//         // margin-left: clamp(10px,10%,12%);
+//         width:25%;
+//        margin-right: min(1%,30px);
+//        margin-bottom: 1%;
+//         .thumbnail {
+//             width:100%;
+//             border-radius: 10px;
+//         }
+//     }

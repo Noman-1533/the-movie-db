@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedFacadeService } from '../../../../shared/services/shared.facade.service';
-
+import { SearchService } from '../../../../feature/search-results/services/search.service';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -55,7 +56,12 @@ export class HeaderComponent {
   timedOutCloser;
   targetMenuTrigger;
 
-  constructor(private router: Router,private sharedFacade:SharedFacadeService) {}
+  searchToggle:boolean=false;
+  searchQuery:string='';
+  searchLoading$:BehaviorSubject<boolean>;
+  searchResults:Observable<string[]>;
+  loading:boolean=false;
+  constructor(private router: Router,private sharedFacade:SharedFacadeService,private searchService:SearchService) {}
 
   // mouseEnter(trigger, index) {
   //   if (this.preTrigger && this.preTrigger != trigger) {
@@ -92,6 +98,7 @@ export class HeaderComponent {
     let qParams=this.convertQueryParamsToObject(this.sharedFacade.getAPIParams({language:'en-US',page:1,adult:false}))
     // console.log('q params from header',qParams)
     // this.router.navigateByUrl(`${url}?${qParams}`);
+    this.searchToggle=false;
     this.router.navigate([url],{queryParams:qParams})
   }
 
@@ -102,5 +109,44 @@ export class HeaderComponent {
       paramsObject[key] = value;
     });
     return paramsObject;
+  }
+  toggleSearch(){
+    this.searchToggle=!this.searchToggle
+  }
+  onClearSearch(){
+    
+    this.searchQuery='';
+    this.searchResults=of(undefined);
+  }
+  createSearch(){
+    this.loading=true;
+   this.searchLoading$=this.searchService.searchLoading;
+
+   this.searchService.onSearchClicked(this.searchQuery);
+   this.searchLoading$.subscribe((res)=>{
+    if(res){
+
+      this.searchResults=this.searchService.getHeaderSearchResult();
+      
+    }
+    setTimeout(() => {
+      this.loading=false;
+    }, 300);
+   })
+  //  this.searchResults.subscribe((res)=>{
+  //   console.log(res)
+  //  })
+  }
+
+  searchSingleItem(queryString:string){
+    // this.searchService.onSearchClicked(queryString);
+    this.searchToggle=false;
+    this.searchResults=of(undefined);
+    this.router.navigate(['/search'],
+    {
+      queryParams:this.searchService.getParamsObject(queryString)
+    }
+    );
+    
   }
 }

@@ -1,9 +1,11 @@
 
-<app-image-overlay *ngIf="detailsData" [src]="detailsData.background_image">
+<!-- <app-image-overlay *ngIf="detailsData" [src]="detailsData.background_image"> -->
+  <div class="main-container">
+    <img class="bg-image" *ngIf="detailsData" [src]="detailsData.background_image" alt="">
   <mat-card>
     <div class="container">
       <div class="image-container"  >
-        <img [src]="detailsData.poster_image" alt=""  appTooltip [tooltipTitle]="detailsData.title" [tooltipContent]="'https://player.vimeo.com/video/1006566924?autoplay=1&amp;muted=1&amp;autopause=0'"/>
+        <img class="thumbnail" [src]="detailsData.poster_image" alt=""  appTooltip [tooltipTitle]="detailsData.title" [tooltipContent]="'https://player.vimeo.com/video/1006566924?autoplay=1&amp;muted=1&amp;autopause=0'"/>
       </div>
       <div class="content-container">
         <mat-card-header>
@@ -60,15 +62,17 @@
         </mat-card-content>
         <mat-card-footer>
           <span class="creator">
-          <span  *ngFor="let creator of creators">
+          <span  *ngFor="let creator of creators;let i = index">
             <div class="test">
-              <div class="creator-name">{{creator.name}}</div>
+              <div class="creator-name">{{creator.name}}{{i}}</div>
               <div class="creator-role">{{creator.role}}</div>
             </div>
+           
           </span>
         </span>
         </mat-card-footer>
       </div>
     </div>
   </mat-card>
-</app-image-overlay>
+</div>
+<!-- </app-image-overlay> -->

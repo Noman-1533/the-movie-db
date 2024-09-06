@@ -61,8 +61,6 @@
   </mat-grid-list>
 </div> -->
 
-
-
 <div class="header-bg">
   <mat-grid-list cols="12" rowHeight="70px">
     <mat-grid-tile colspan="2">
@@ -118,9 +116,43 @@
           <app-language-selector></app-language-selector>
           <button mat-button>Login</button>
           <button mat-button>Join TMDB</button>
-          <button class="btn searchButton"><mat-icon>search</mat-icon></button>
+          <button class="btn searchButton">
+            <mat-icon (click)="toggleSearch()"
+              ><span *ngIf="!searchToggle">search</span>
+              <span *ngIf="searchToggle">clear</span></mat-icon
+            >
+          </button>
         </div>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
+  <div *ngIf="searchToggle" class="search-field">
+    <mat-icon>search</mat-icon>
+    <input
+      type="text"
+      placeholder="search here"
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="createSearch()"
+    />
+    <button (click)="onClearSearch()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+  <span *ngIf="searchToggle">
+    <span *ngIf="loading" class="search-results loader"
+      ><app-ratting
+        [ratting]="''"
+        [mode]="'indeterminate'"
+        [stroke]="5"
+      ></app-ratting
+    ></span>
+    <div class="search-results" *ngIf="!loading && searchResults | async">
+      <h2><span>Search results</span></h2>
+      <span *ngFor="let result of searchResults | async"
+        ><div class="search-items" (click)="searchSingleItem(result)">
+          <span>{{ result }}</span>
+        </div></span
+      >
+    </div>
+  </span>
 </div>

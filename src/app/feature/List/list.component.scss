@@ -1,5 +1,4 @@
 .container {
-  // Existing styles
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -24,7 +23,7 @@
 
       .load-more-button {
         width: 100%;
-          // Keep the styles here or add more if needed
+       
       }
 
       .loader {
@@ -41,6 +40,10 @@
       height: 60px;
       margin: 10px 0;
       color: white;
+      margin-bottom: 5%;
+      font-size:large;
+      display: flex;
+      justify-content: center;
   }
 }
 
@@ -85,7 +88,6 @@
 @media (min-width: 1024px) {
   .container .main-content .card-container {
       width: calc(33.33% - 0.67%);
-      
   }
 }
 
