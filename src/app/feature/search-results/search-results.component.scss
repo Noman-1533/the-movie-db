@@ -6,3 +6,17 @@
    flex-wrap: wrap;
 
 }
+.no-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   mat-icon{
+    font-size: 250px; 
+    height: 250px;    
+    width: 250px;     
+    color: rgb(135, 135, 135);
+   }
+   h1{
+    font-size: xx-large;
+   }
+}

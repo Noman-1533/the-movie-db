@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedFacadeService } from '../../../../shared/services/shared.facade.service';
 import { SearchService } from '../../../../feature/search-results/services/search.service';
@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewChecked{
   navButtons = [
     {
       title: 'Movies',
@@ -32,18 +32,16 @@ export class HeaderComponent {
     },
     {
       title: 'People',
-      menuItems: [
-        { title: 'Popular People', navLink: 'list/people/popular' },
-      ],
+      menuItems: [{ title: 'Popular People', navLink: 'list/people/popular' }],
       isOpen: false,
     },
     {
       title: 'More',
       menuItems: [
-        { title: 'Discussion',navLink:'' },
-        { title: 'Leaderboard',navLink:'' },
-        { title: 'Support' ,navLink:''},
-        { title: 'API',navLink:'' },
+        { title: 'Discussion', navLink: '' },
+        { title: 'Leaderboard', navLink: '' },
+        { title: 'Support', navLink: '' },
+        { title: 'API', navLink: '' },
       ],
       isOpen: false,
     },
@@ -56,12 +54,18 @@ export class HeaderComponent {
   timedOutCloser;
   targetMenuTrigger;
 
-  searchToggle:boolean=false;
-  searchQuery:string='';
-  searchLoading$:BehaviorSubject<boolean>;
-  searchResults:Observable<string[]>;
-  loading:boolean=false;
-  constructor(private router: Router,private sharedFacade:SharedFacadeService,private searchService:SearchService) {}
+  searchToggle: boolean = false;
+  searchQuery: string = '';
+  searchLoading$: BehaviorSubject<boolean>;
+  searchResults: string[]=[];
+  loading: boolean = false;
+
+  @ViewChild('searchInput',{static:false})searchInput:ElementRef
+  constructor(
+    private router: Router,
+    private sharedFacade: SharedFacadeService,
+    private searchService: SearchService,
+  ) {}
 
   // mouseEnter(trigger, index) {
   //   if (this.preTrigger && this.preTrigger != trigger) {
@@ -93,16 +97,40 @@ export class HeaderComponent {
   //   // }, 50);
   // }
 
+
+  hoveredMenu: number | null = null;
+
+openMenu(index: number) {
+  this.hoveredMenu = index;
+}
+
+closeMenu(index: number) {
+  this.hoveredMenu = null;
+}
+  ngAfterViewChecked(){
+    if(this.searchToggle){
+      if(this.searchInput){
+        this.searchInput.nativeElement.focus();
+      }
+    }
+  }
   onClick(url: string = '') {
-    
-    let qParams=this.convertQueryParamsToObject(this.sharedFacade.getAPIParams({language:'en-US',page:1,adult:false}))
+    let qParams = this.convertQueryParamsToObject(
+      this.sharedFacade.getAPIParams({
+        language: 'en-US',
+        page: 1,
+        adult: false,
+      })
+    );
     // console.log('q params from header',qParams)
     // this.router.navigateByUrl(`${url}?${qParams}`);
-    this.searchToggle=false;
-    this.router.navigate([url],{queryParams:qParams})
+    this.searchToggle = false;
+    this.router.navigate([url], { queryParams: qParams });
   }
 
-   convertQueryParamsToObject(queryParamsString: string): { [key: string]: any } {
+  convertQueryParamsToObject(queryParamsString: string): {
+    [key: string]: any;
+  } {
     const queryParams = new URLSearchParams(queryParamsString);
     const paramsObject: { [key: string]: any } = {};
     queryParams.forEach((value, key) => {
@@ -110,43 +138,37 @@ export class HeaderComponent {
     });
     return paramsObject;
   }
-  toggleSearch(){
-    this.searchToggle=!this.searchToggle
+  toggleSearch() {
+    this.searchToggle = !this.searchToggle;
   }
-  onClearSearch(){
-    
-    this.searchQuery='';
-    this.searchResults=of(undefined);
+  onClearSearch() {
+    this.searchQuery = '';
+    this.searchResults = [];
   }
-  createSearch(){
-    this.loading=true;
-   this.searchLoading$=this.searchService.searchLoading;
+  createSearch() {
+    this.loading = true;
+    this.searchLoading$ = this.searchService.searchLoading;
 
-   this.searchService.onSearchClicked(this.searchQuery);
-   this.searchLoading$.subscribe((res)=>{
-    if(res){
-
-      this.searchResults=this.searchService.getHeaderSearchResult();
-      
-    }
-    setTimeout(() => {
-      this.loading=false;
-    }, 300);
-   })
-  //  this.searchResults.subscribe((res)=>{
-  //   console.log(res)
-  //  })
+    this.searchService.onHeaderSearch(this.searchQuery);
+    this.searchLoading$.subscribe((res) => {
+      if (res) {
+        this.searchResults = this.searchService.getHeaderSearchResult();
+      }
+      setTimeout(() => {
+        this.loading = false;
+      }, 300);
+    });
+    //  this.searchResults.subscribe((res)=>{
+    //   console.log(res)
+    //  })
   }
 
-  searchSingleItem(queryString:string){
+  searchSingleItem(queryString: string) {
     // this.searchService.onSearchClicked(queryString);
-    this.searchToggle=false;
-    this.searchResults=of(undefined);
-    this.router.navigate(['/search'],
-    {
-      queryParams:this.searchService.getParamsObject(queryString)
-    }
-    );
-    
+    this.searchToggle = false;
+    this.searchResults = [];
+    this.router.navigate(['/search'], {
+      queryParams: this.searchService.getParamsObject(queryString),
+    });
   }
 }

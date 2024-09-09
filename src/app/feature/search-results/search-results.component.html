@@ -14,3 +14,8 @@
     </app-card>
     </span>
   </div>
+  <div class="no-result" *ngIf="searchResult.length===0">
+    <mat-icon>search_off</mat-icon>
+    <h1>No Results Found</h1>
+
+  </div>

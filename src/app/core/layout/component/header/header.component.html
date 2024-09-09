@@ -61,6 +61,68 @@
   </mat-grid-list>
 </div> -->
 
+
+<!-- <div class="header-bg">
+  <div class="logo-container">
+    <div class="logo">
+      <img
+        src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+        alt="TMDB logo"
+        (click)="onClick()"
+      />
+    </div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-bar">
+      <ng-container *ngFor="let button of navButtons; let i = index">
+        <span class="nav-button-wrapper">
+          <button
+            class="nav-link"
+            (mouseover)="openMenu(i)"
+            (mouseout)="closeMenu(i)"
+          >
+            <span class="button-color">{{ button.title }}</span>
+          </button>
+        </span>
+
+        <div
+          class="menu-content"
+          *ngIf="hoveredMenu === i"
+          (mouseover)="openMenu(i)"
+          (mouseout)="closeMenu(i)"
+        >
+          <button
+            *ngFor="let item of button.menuItems"
+            (click)="onClick(item.navLink)"
+          >
+            {{ item.title }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="other-menu-container">
+    <div class="other-menu">
+      <button class="btn"><mat-icon>add</mat-icon></button>
+      <app-language-selector></app-language-selector>
+      <button>Login</button>
+      <button>Join TMDB</button>
+      <button class="btn searchButton" (click)="toggleSearch()">
+        <mat-icon><span *ngIf="!searchToggle">search</span><span *ngIf="searchToggle">clear</span></mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="searchToggle" class="search-field">
+    <mat-icon>search</mat-icon>
+    <input type="text" placeholder="search here" [(ngModel)]="searchQuery" />
+    <button (click)="onClearSearch()"><mat-icon>clear</mat-icon></button>
+  </div>
+</div> -->
+
+
 <div class="header-bg">
   <mat-grid-list cols="12" rowHeight="70px">
     <mat-grid-tile colspan="2">
@@ -133,6 +195,7 @@
       placeholder="search here"
       [(ngModel)]="searchQuery"
       (ngModelChange)="createSearch()"
+      #searchInput
     />
     <button (click)="onClearSearch()">
       <mat-icon>clear</mat-icon>
@@ -146,13 +209,20 @@
         [stroke]="5"
       ></app-ratting
     ></span>
-    <div class="search-results" *ngIf="!loading && searchResults | async">
-      <h2><span>Search results</span></h2>
-      <span *ngFor="let result of searchResults | async"
-        ><div class="search-items" (click)="searchSingleItem(result)">
-          <span>{{ result }}</span>
-        </div></span
-      >
+    <div class="search-results" *ngIf="!loading">    
+        <span *ngIf="searchResults.length>0">
+          <h2><span>Search results</span></h2>
+          <span *ngFor="let result of searchResults"
+            ><div class="search-items" (click)="searchSingleItem(result)">
+              <div><mat-icon>search</mat-icon> <span>{{ result }}</span></div>
+            </div>
+          </span>
+        </span>
+      <span *ngIf="searchResults.length===0">
+        <h1  class="search-items" ><span style="margin: 0 auto">No such results found</span></h1>
+      </span>
+      
     </div>
   </span>
 </div>
+

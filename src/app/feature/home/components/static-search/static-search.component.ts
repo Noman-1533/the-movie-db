@@ -20,13 +20,14 @@ import { SearchService } from '../../../search-results/services/search.service';
     this.searchService.onSearchQueryChangeAction(this.searchQuery,this.route,this.router);
     }
     onSearch(){
+      if(this.searchQuery){
       this.searchService.onSearchClicked(this.searchQuery);
       this.route.queryParams.subscribe((res)=>{
-
         this.router.navigate(['/search'],{
           queryParams:res
         })
       })
+    }
     }
   
     fetchRandomBackground() {

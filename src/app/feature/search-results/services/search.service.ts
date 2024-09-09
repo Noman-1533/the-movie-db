@@ -12,6 +12,7 @@ import { PageSingleCardModel, PageCardData } from '../../home/model/cardModel';
 })
 export class SearchService {
   searchResult:PageSingleCardModel[];
+  headerSearchResults:PageSingleCardModel[];
   searchLoading=new BehaviorSubject<boolean>(false);
 
   constructor(private http:HttpClient,private sharedFacade:SharedFacadeService) { }
@@ -25,23 +26,40 @@ export class SearchService {
       })
     }
     else if(searchQuery==='') {
-      // Remove query parameter when input is empty
       router.navigate([], {
         relativeTo: route,
         queryParams: { search: null },
       });
    }
   }
+  getSearchResults(searchQuery:string,type:string='multi'){
+    let params=this.sharedFacade.getAPIParams({query:searchQuery,isForSearch:true})
+    return this.http.get<PageCardData>(`${environment.BASE_URL}/search/${type}?${params}`)
+  }
 
   onSearchClicked(searchQuery:string,type:string='multi'){
-    let params=this.sharedFacade.getAPIParams({query:searchQuery,isForSearch:true})
     this.searchResult=[];
-     this.http.get<PageCardData>(`${environment.BASE_URL}/search/${type}?${params}`).subscribe((res)=>{
+   this.getSearchResults(searchQuery,type).subscribe((res)=>{
       if(res)
       {
-        this.searchResult=res.results;
+          this.searchResult=res.results.filter((item)=>
+            (item.media_type==='movie'||item.media_type==='tv')
+          );
         this.searchLoading.next(true);
-        // console.log(this.searchResult)
+      }
+
+     })
+  }
+  onHeaderSearch(searchQuery:string,type:string='multi'){
+  
+    this.headerSearchResults=[];
+   this.getSearchResults(searchQuery,type).subscribe((res)=>{
+      if(res)
+      {
+        this.headerSearchResults=res.results.filter((item)=>
+          (item.media_type==='movie'||item.media_type==='tv')
+        );
+        this.searchLoading.next(true)
       }
 
      })
@@ -50,13 +68,12 @@ export class SearchService {
   getParamsObject(searchQuery:string){
     return {query:searchQuery,page:1,language:'en-US',include_adult:false}
   }
-  getHeaderSearchResult():Observable<string[]>{
+  getHeaderSearchResult():string[]{
     let results:string[]=[];
-        this.searchResult.forEach((item)=>{
+        this.headerSearchResults.forEach((item)=>{
           results.push(item.name||item.title)
-        
         })
      
-    return of(results.splice(0,10));
+    return (results.splice(0,10));
   }
 }
